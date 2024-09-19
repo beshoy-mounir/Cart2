@@ -26,10 +26,7 @@ function App() {
         if (products.find((i) => i.id == sentId)) {
             numOfItems(sentId, "+");
         } else {
-            let addedObj = readonly[sentId - 1];
-            let tempObj = products.push(addedObj);
-            setProducts(tempObj);
-            numOfItems();
+            setProducts([...products, readonly[sentId - 1]]);
         }
     };
 
